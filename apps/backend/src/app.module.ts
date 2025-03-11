@@ -1,6 +1,6 @@
 import { Module, OnModuleInit } from '@nestjs/common';
 import config from 'config/config';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ContactsModule } from './contacts/contacts.module';
 import { CommonModule } from './common/common.module';
 import { SqsModule } from '@ssut/nestjs-sqs';
@@ -12,14 +12,21 @@ import { SqsModule } from '@ssut/nestjs-sqs';
       load: [config],
     }),
     SqsModule.registerAsync({
-      useFactory: () => {
-        console.log(JSON.stringify(config().queue, null, 2));
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => {
         return {
           consumers: [
             {
-              region: config().queue.region || 'us-east-1',
-              name: config().queue.createContactQueueName || '',
-              queueUrl: config().queue.createContactFilesQueueUrl || '',
+              region: configService.get<string>('queue.region', 'us-east-1'),
+              name: configService.get<string>(
+                'queue.createContactQueueName',
+                '',
+              ),
+              queueUrl: configService.get<string>(
+                'queue.createContactFilesQueueUrl',
+                '',
+              ),
               waitTimeSeconds: 20,
               visibilityTimeout: 30,
               pollingWaitTimeMs: 0,
