@@ -8,7 +8,7 @@ export default () => ({
     host: process.env.POSTGRES_HOST,
   },
   queue: {
-    endpoint: 'http://localhost:4566',
+    endpoint: process.env.QUEUE_ENDPOINT || '',
     region: process.env.SQS_REGION || 'us-east-1',
     createContactQueueName: 'sqs-create-contact-queue',
     createContactFilesQueueUrl:
