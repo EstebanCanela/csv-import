@@ -1,12 +1,11 @@
-import { Button } from "@workspace/ui/components/button"
+import UploadCSV from "@/components/upload-csv";
 
-export default function Page() {
+export default function Home() {
   return (
-    <div className="flex items-center justify-center min-h-svh">
-      <div className="flex flex-col items-center justify-center gap-4">
-        <h1 className="text-2xl font-bold">Hello World</h1>
-        <Button size="sm">Button</Button>
+    <main className="min-h-screen bg-black text-white">
+      <div className="container mx-auto px-4 py-8">
+        <UploadCSV />
       </div>
-    </div>
-  )
+    </main>
+  );
 }

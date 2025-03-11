@@ -1,0 +1,1 @@
+ALTER TABLE "files" ALTER COLUMN "status" SET DATA TYPE varchar(64);

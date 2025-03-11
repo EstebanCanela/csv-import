@@ -1,0 +1,46 @@
+version: "3.7"
+
+services:
+  localstack:
+    image: localstack/localstack:latest
+    container_name: localstack-csv-import
+    environment:
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - SERVICES=s3,sqs
+      - EDGE_PORT=4566
+      - DEBUG=1
+      - AWS_DEFAULT_OUTPUT=json
+      - AWS_DEFAULT_REGION=us-east-1
+      - DISABLE_CORS_CHECKS=1
+      - DISABLE_CUSTOM_CORS_S3=1
+    ports:
+      - "4566:4566"
+    volumes:
+      - "${TMPDIR:-/tmp/localstack}:/tmp/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - ./localstack-setup.sh:/etc/localstack/init/ready.d/script.sh
+    networks:
+      - localstack_network
+
+  postgres:
+    image: postgres:16
+    container_name: postgres-csv-import
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: csv-import
+    ports:
+      - "5432:5432"
+    networks:
+      - localstack_network
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
+    driver: local
+
+networks:
+  localstack_network:
+    driver: bridge
