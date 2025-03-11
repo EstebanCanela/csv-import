@@ -13,13 +13,13 @@ import { SqsModule } from '@ssut/nestjs-sqs';
     }),
     SqsModule.registerAsync({
       useFactory: () => {
+        console.log(JSON.stringify(config().queue, null, 2));
         return {
           consumers: [
             {
               region: config().queue.region || 'us-east-1',
               name: config().queue.createContactQueueName || '',
               queueUrl: config().queue.createContactFilesQueueUrl || '',
-              endpoint: 'http://localhost:4566',
               waitTimeSeconds: 20,
               visibilityTimeout: 30,
               pollingWaitTimeMs: 0,

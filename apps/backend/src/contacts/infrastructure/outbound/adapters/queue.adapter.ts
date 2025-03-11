@@ -10,7 +10,6 @@ export default class QueueAdapter implements QueuePort {
 
   constructor(private configService: ConfigService) {
     this.sqsClient = new SQSClient({
-      endpoint: this.configService.get<string>('queue.endpoint') || '',
       region: this.configService.get<string>('queue.region') || 'us-east-1',
       credentials: {
         accessKeyId: this.configService.get<string>('queue.accessKeyId') || '',
