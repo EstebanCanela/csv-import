@@ -26,6 +26,9 @@ import { SqsModule } from '@ssut/nestjs-sqs';
                 'queue.createContactFilesQueueUrl',
                 '',
               ),
+              ...(configService.get<string>('queue.endpoint', '')
+                ? { endpoint: configService.get<string>('queue.endpoint', '') }
+                : {}),
               waitTimeSeconds: 20,
               visibilityTimeout: 30,
               pollingWaitTimeMs: 0,

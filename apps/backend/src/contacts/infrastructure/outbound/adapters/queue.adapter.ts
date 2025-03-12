@@ -16,6 +16,9 @@ export default class QueueAdapter implements QueuePort {
         secretAccessKey:
           this.configService.get<string>('queue.secretAccessKey') || '',
       },
+      ...(configService.get<string>('queue.endpoint', '')
+        ? { endpoint: configService.get<string>('queue.endpoint', '') }
+        : {}),
     });
 
     this.queueName =

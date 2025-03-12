@@ -1,0 +1,387 @@
+{
+	"info": {
+		"_postman_id": "5ca16e22-810b-4bdc-b9a6-71e47ca47180",
+		"name": "Resend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8496852"
+	},
+	"item": [
+		{
+			"name": "POST /presigned-url",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en;q=0.9,es-AR;q=0.8,es;q=0.7,en-US;q=0.6"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "origin",
+						"value": "https://csv-import-web.vercel.app"
+					},
+					{
+						"key": "pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://csv-import-web.vercel.app/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not(A:Brand\";v=\"99\", \"Google Chrome\";v=\"133\", \"Chromium\";v=\"133\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"filename\": \"user_data.csv\",\n    \"user_id\": \"94c6e80f-afb0-48a4-ae56-f497bea452c3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://csv-backend-production.up.railway.app/v1/contacts/files/presigned-url",
+					"protocol": "https",
+					"host": [
+						"csv-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"v1",
+						"contacts",
+						"files",
+						"presigned-url"
+					]
+				},
+				"description": "Generated from cURL: curl 'https://csv-backend-production.up.railway.app/v1/contacts/files/presigned-url' \\\n  -H 'accept: */*' \\\n  -H 'accept-language: en-GB,en;q=0.9,es-AR;q=0.8,es;q=0.7,en-US;q=0.6' \\\n  -H 'cache-control: no-cache' \\\n  -H 'content-type: application/json' \\\n  -H 'origin: https://csv-import-web.vercel.app' \\\n  -H 'pragma: no-cache' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://csv-import-web.vercel.app/' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"99\", \"Google Chrome\";v=\"133\", \"Chromium\";v=\"133\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: cross-site' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36' \\\n  --data-raw '{\"filename\":\"user_data.csv\",\"user_id\":\"94c6e80f-afb0-48a4-ae56-f497bea452c3\"}'"
+			},
+			"response": []
+		},
+		{
+			"name": "POST /contacts/files",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en;q=0.9,es-AR;q=0.8,es;q=0.7,en-US;q=0.6"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "origin",
+						"value": "https://csv-import-web.vercel.app"
+					},
+					{
+						"key": "pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://csv-import-web.vercel.app/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not(A:Brand\";v=\"99\", \"Google Chrome\";v=\"133\", \"Chromium\";v=\"133\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"filename\": \"user_data.csv\",\n    \"file_size\": 200,\n    \"user_id\": \"94c6e80f-afb0-48a4-ae56-f497bea452c3\",\n    \"file_type\": \"text/csv\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://csv-backend-production.up.railway.app/v1/contacts/files",
+					"protocol": "https",
+					"host": [
+						"csv-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"v1",
+						"contacts",
+						"files"
+					]
+				},
+				"description": "Generated from cURL: curl 'https://csv-backend-production.up.railway.app/v1/contacts/files' \\\n  -H 'accept: */*' \\\n  -H 'accept-language: en-GB,en;q=0.9,es-AR;q=0.8,es;q=0.7,en-US;q=0.6' \\\n  -H 'cache-control: no-cache' \\\n  -H 'content-type: application/json' \\\n  -H 'origin: https://csv-import-web.vercel.app' \\\n  -H 'pragma: no-cache' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://csv-import-web.vercel.app/' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"99\", \"Google Chrome\";v=\"133\", \"Chromium\";v=\"133\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: cross-site' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36' \\\n  --data-raw '{\"filename\":\"user_data.csv\",\"file_size\":200,\"user_id\":\"94c6e80f-afb0-48a4-ae56-f497bea452c3\",\"file_type\":\"text/csv\"}'"
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH /files/:id/export",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en;q=0.9,es-AR;q=0.8,es;q=0.7,en-US;q=0.6"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "origin",
+						"value": "https://csv-import-web.vercel.app"
+					},
+					{
+						"key": "pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://csv-import-web.vercel.app/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not(A:Brand\";v=\"99\", \"Google Chrome\";v=\"133\", \"Chromium\";v=\"133\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"configuration\": [\n        {\n            \"field\": \"email\",\n            \"value\": \"email\"\n        },\n        {\n            \"field\": \"last_name\",\n            \"value\": \"last_name\"\n        },\n        {\n            \"field\": \"first_name\",\n            \"value\": \"firstName\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://csv-backend-production.up.railway.app/v1/contacts/files/601794ec-fe86-4293-bb32-54a81796206b/export",
+					"protocol": "https",
+					"host": [
+						"csv-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"v1",
+						"contacts",
+						"files",
+						"601794ec-fe86-4293-bb32-54a81796206b",
+						"export"
+					]
+				},
+				"description": "Generated from cURL: curl 'https://csv-backend-production.up.railway.app/v1/contacts/files/601794ec-fe86-4293-bb32-54a81796206b/export' \\\n  -X 'PATCH' \\\n  -H 'accept: */*' \\\n  -H 'accept-language: en-GB,en;q=0.9,es-AR;q=0.8,es;q=0.7,en-US;q=0.6' \\\n  -H 'cache-control: no-cache' \\\n  -H 'content-type: application/json' \\\n  -H 'origin: https://csv-import-web.vercel.app' \\\n  -H 'pragma: no-cache' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://csv-import-web.vercel.app/' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"99\", \"Google Chrome\";v=\"133\", \"Chromium\";v=\"133\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: cross-site' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36' \\\n  --data-raw '{\"configuration\":[{\"field\":\"email\",\"value\":\"email\"},{\"field\":\"last_name\",\"value\":\"last_name\"},{\"field\":\"first_name\",\"value\":\"firstName\"}]}'"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /contacts?userId=:user_id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en;q=0.9,es-AR;q=0.8,es;q=0.7,en-US;q=0.6"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "next-router-state-tree",
+						"value": "%5B%22%22%2C%7B%22children%22%3A%5B%22__PAGE__%22%2C%7B%7D%2C%22%2F%22%2C%22refresh%22%5D%7D%2Cnull%2Cnull%2Ctrue%5D"
+					},
+					{
+						"key": "next-url",
+						"value": "/"
+					},
+					{
+						"key": "pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://csv-import-web.vercel.app/"
+					},
+					{
+						"key": "rsc",
+						"value": "1"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not(A:Brand\";v=\"99\", \"Google Chrome\";v=\"133\", \"Chromium\";v=\"133\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
+					}
+				],
+				"url": {
+					"raw": "https://csv-import-web.vercel.app/contacts?userId=94c6e80f-afb0-48a4-ae56-f497bea452c3",
+					"protocol": "https",
+					"host": [
+						"csv-import-web",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"contacts"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "94c6e80f-afb0-48a4-ae56-f497bea452c3"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl 'https://csv-import-web.vercel.app/contacts?userId=94c6e80f-afb0-48a4-ae56-f497bea452c3&_rsc=rxx9e' \\\n  -H 'accept: */*' \\\n  -H 'accept-language: en-GB,en;q=0.9,es-AR;q=0.8,es;q=0.7,en-US;q=0.6' \\\n  -H 'cache-control: no-cache' \\\n  -H 'next-router-state-tree: %5B%22%22%2C%7B%22children%22%3A%5B%22__PAGE__%22%2C%7B%7D%2C%22%2F%22%2C%22refresh%22%5D%7D%2Cnull%2Cnull%2Ctrue%5D' \\\n  -H 'next-url: /' \\\n  -H 'pragma: no-cache' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://csv-import-web.vercel.app/' \\\n  -H 'rsc: 1' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"99\", \"Google Chrome\";v=\"133\", \"Chromium\";v=\"133\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36'"
+			},
+			"response": []
+		}
+	]
+}

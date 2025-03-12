@@ -1,31 +1,50 @@
-# shadcn/ui monorepo template
+# **CSV Import**
 
-This template is for creating a monorepo with shadcn/ui.
+CSV Import is a service designed to efficiently process and manage CSV file uploads. It provides a backend API to handle CSV file processing and a frontend for users to upload and monitor their imports.
 
-## Usage
+## **Architecture**
 
-```bash
-pnpm dlx shadcn@latest init
+![Architecture](./docs/architecture.png)
+
+## **Live Website**
+
+- **Frontend:** [csv-import-web.vercel.app](https://csv-import-web.vercel.app/)
+- **Backend:** [csv-backend-production.up.railway.app](https://csv-backend-production.up.railway.app/)
+
+## **Installation**
+
+This project uses **Turborepo** for monorepo management. To set up and run the entire project, follow these steps:
+
+```sh
+1. docker compose up -d  # Start required services (DB, etc.)
+2. pnpm install          # Install dependencies
+3. pnpm build:web        # Build the frontend
+4. pnpm build:backend    # Build the backend
 ```
 
-## Adding components
+## **Deployments**
 
-To add components to your app, run the following command at the root of your `web` app:
+Our infrastructure is deployed across the following services:
 
-```bash
-pnpm dlx shadcn@latest add button -c apps/web
-```
+- **Backend:** Railway
+- **Frontend:** Vercel
+- **Database:** Supabase
+- **File Storage & Queue:** AWS S3 & SQS
 
-This will place the ui components in the `packages/ui/src/components` directory.
+## **Usage**
 
-## Tailwind
+You can import the Postman collection located in the `/docs` folder at the root of the project to test API endpoints.
 
-Your `tailwind.config.ts` and `globals.css` are already set up to use the components from the `ui` package.
+Additionally, there is a script (`csv-generator.py`) in the project that generates a CSV file with 1 million rows for testing and benchmarking purposes.
 
-## Using components
+## **Improvements**
 
-To use the components in your app, import them from the `ui` package.
+We aim to enhance the project with the following improvements:
 
-```tsx
-import { Button } from "@workspace/ui/components/button"
-```
+- [ ] Implement structured logging with **Pino**
+- [ ] Improve **error handling** across all layers
+- [ ] Add **unit** and **integration tests**
+
+## **Performance Considerations**
+
+Processing large CSV files in **Node.js** is not optimal. I benchmarked this application against **Golang** and **Polars (Python)**, and both were significantly faster processing the entire CSV in **under a second**.
