@@ -4,12 +4,6 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ContactsModule } from './contacts/contacts.module';
 import { CommonModule } from './common/common.module';
 import { SqsModule } from '@ssut/nestjs-sqs';
-
-console.log(
-  'Full process.env at runtime:',
-  JSON.stringify(process.env, null, 2),
-);
-
 @Module({
   imports: [
     ConfigModule.forRoot({

@@ -196,7 +196,6 @@ export default function UploadCSV() {
         fileToUpload.name,
         userId
       );
-      console.log("URL:", presignedUrlResponse.url);
 
       await uploadFileToS3(fileToUpload, presignedUrlResponse.url);
 
@@ -208,8 +207,6 @@ export default function UploadCSV() {
       );
 
       setFileCreationResponse(createFileResponse);
-
-      console.log(JSON.stringify(createFileResponse, null, 2));
 
       const csvColumnsBatch: CsvColumn[] = createFileResponse.headers.map(
         (element) => ({
@@ -368,19 +365,13 @@ export default function UploadCSV() {
         .filter((dest) => dest.required)
         .map((dest) => dest.id);
 
-      console.log("Required destinations:", requiredDestinations);
-
       const mappedDestinations = Object.values(columnMappings).filter(
         (destId) => destId !== ""
       );
 
-      console.log("Mapped destinations:", mappedDestinations);
-
       const unmappedRequired = requiredDestinations.filter(
         (reqDest) => !mappedDestinations.includes(reqDest)
       );
-
-      console.log("Unmapped required:", unmappedRequired);
 
       return unmappedRequired;
     };
@@ -408,7 +399,7 @@ export default function UploadCSV() {
                 (dest) =>
                   !Object.values(columnMappings)
                     .filter(
-                      (_, index) => csvColumns[index].name !== column.name
+                      (_, index) => csvColumns[index]?.name !== column.name
                     )
                     .includes(dest.id) || dest.id === currentMapping
               ),
@@ -538,8 +529,6 @@ export default function UploadCSV() {
       if (data) {
         router.push(`/contacts?userId=${userId}`);
       }
-
-      console.log(data);
     };
 
     return (

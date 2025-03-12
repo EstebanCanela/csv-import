@@ -1,12 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { ChevronLeft, ChevronRight, MoreVertical } from "lucide-react";
 import { getContacts } from "@/shared/api/contacts/contacts.api";
 import { ContactResponseDto } from "@/shared/api/contacts/contacts.api.model";
 
-export default function ContactsPage() {
+export default function ContactPage() {
+  return (
+    <Suspense>
+      <Contacts />
+    </Suspense>
+  );
+}
+
+function Contacts() {
   const searchParams = useSearchParams();
   const userId = searchParams.get("userId") || "";
   const [contacts, setContacts] = useState<ContactResponseDto[]>([]);
@@ -24,12 +32,10 @@ export default function ContactsPage() {
         const response = await getContacts(userId, cursor);
 
         if (response.status === "IN_PROGRESS" && !response.data.length) {
-          console.log("Retrying fetch due to IN_PROGRESS or empty data...");
           setTimeout(() => fetchContacts(), 500);
           return;
         }
 
-        console.log("Fetched contacts:", response.data);
         if (response.data.length) {
           setContacts(response.data);
         }
