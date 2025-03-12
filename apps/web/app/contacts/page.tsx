@@ -81,9 +81,10 @@ function Contacts() {
     <div className="min-h-screen bg-black text-white">
       <div className="max-w-6xl mx-auto p-4">
         <div className="rounded-lg border border-gray-800 overflow-hidden">
-          <div className="grid grid-cols-[1fr,auto,auto,auto] gap-4 p-4 bg-[#111] border-b border-gray-800">
+          <div className="grid grid-cols-[1.5fr,1fr,1fr,1fr,1fr] gap-4 p-4 bg-[#111] border-b border-gray-800">
             <div className="text-gray-400 font-medium">Email</div>
             <div className="text-gray-400 font-medium">First Name</div>
+            <div className="text-gray-400 font-medium">Last Name</div>
             <div className="text-gray-400 font-medium">Status</div>
             <div className="text-gray-400 font-medium">Updated</div>
           </div>
@@ -92,7 +93,7 @@ function Contacts() {
             {contacts.map((contact, index) => (
               <div
                 key={index}
-                className="grid grid-cols-[1fr,auto,auto,auto] gap-4 p-4 items-center hover:bg-gray-900/50 transition-colors"
+                className="grid grid-cols-[1.5fr,1fr,1fr,1fr,1fr] gap-4 p-4 items-center hover:bg-gray-900/50 transition-colors"
               >
                 <div className="flex items-center gap-4 min-w-0">
                   <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center flex-shrink-0">
@@ -107,6 +108,11 @@ function Contacts() {
                 <div className="flex items-center gap-3 min-w-0">
                   <span className="truncate text-gray-300">
                     {contact.first_name}
+                  </span>
+                </div>
+                <div className="flex items-center gap-3 min-w-0">
+                  <span className="truncate text-gray-300">
+                    {contact.last_name || "-"}
                   </span>
                 </div>
                 <div>
