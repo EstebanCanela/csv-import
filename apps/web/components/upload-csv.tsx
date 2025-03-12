@@ -534,7 +534,7 @@ export default function UploadCSV() {
     return (
       <div className="border-2 border-gray-700 rounded-lg p-12 flex flex-col items-center justify-center h-96">
         <h2 className="text-xl font-semibold mb-4">Review</h2>
-        <p className="text-gray-400">Review interface would go here</p>
+        <p className="text-gray-400">Please review the column mappings</p>
         <div className="flex space-x-4 mt-8">
           <button
             className="px-4 py-2 bg-gray-800 rounded-md hover:bg-gray-700 transition-colors"
