@@ -31,7 +31,7 @@ function Contacts() {
       try {
         const response = await getContacts(userId, cursor);
 
-        if (response.status === "IN_PROGRESS" && !response.data.length) {
+        if (response.status === "IN_PROGRESS" || !response.data.length) {
           setTimeout(() => fetchContacts(), 500);
           return;
         }

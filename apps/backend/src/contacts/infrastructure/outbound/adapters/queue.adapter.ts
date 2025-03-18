@@ -22,7 +22,7 @@ export default class QueueAdapter implements QueuePort {
     });
 
     this.queueName =
-      this.configService.get<string>('queue.createContactQueueName') || '';
+      this.configService.get<string>('queue.createContactFilesQueueUrl') || '';
   }
 
   async publishMessage(message: Record<string, unknown>): Promise<void> {
